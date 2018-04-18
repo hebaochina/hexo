@@ -109,7 +109,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/web_1.png">
 <meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/web_2.png">
-<meta property="og:updated_time" content="2018-04-18T14:58:51.907Z">
+<meta property="og:updated_time" content="2018-04-18T15:09:57.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="建站（1）-服务器配置">
 <meta name="twitter:description" content="我相信大家都希望拥有一个自己的网站，并且想把它打扮得漂漂亮亮后向外界展示，其实建立一个自己的网站并不难，而且利用网上的资源可以很容易的把它布置得很漂亮很精致，我相信大家看完整套笔记可以很快速的搭建起自己的网站，这套笔记是个人对建站的理解，如果有不严谨的地方请读者不吝指教。 建站的第一步当然是服务器的配置了，万事开头难，其实也不难。服务器的配置包括系统镜像的安装，配置网站环境两部分。">
@@ -408,8 +408,8 @@
 </blockquote>
 <p>去阿里云官网购买一台云服务器，学生有9.9优惠的云服务器，阿里云新用户也有免费的体验云服务器。阿里云会为我们提供系统的镜像，如下图：<br><img src="http://p5qti9zfp.bkt.clouddn.com/web_1.png" alt="web_1.png"><br>阿里云现在提供了预装wordpress的镜像，大家也可以去尝试一下。</p>
 <h2 id="二，配置网站环境"><a href="#二，配置网站环境" class="headerlink" title="二，配置网站环境"></a>二，配置网站环境</h2><p>网站环境一共有三个核心部分，nginx反向代理服务器，php后端交互，mysql数据库管理，当然你也可以使用apache等，这里只对linux+nginx+php+mysql（lnmp）的安装进行讲解。介绍两种安装方式（推荐第二种方式）：</p>
-<h3 id="按顺序安装nginx，php，mysql"><a href="#按顺序安装nginx，php，mysql" class="headerlink" title="按顺序安装nginx，php，mysql"></a>按顺序安装nginx，php，mysql</h3><p><strong>1.远程连接服务器：</strong><br>在阿里云控制台中找到刚刚购买的服务器，点击远程连接图标即可。<br><img src="http://p5qti9zfp.bkt.clouddn.com/web_2.png" alt="web_2.png"><br>有很多远程连接的方法，比如用putty等工具，大家可以去了解一下，后面我也会贴出相关的文章。</p>
-<p><strong>2.安装nginx：</strong><br><strong>2.1</strong> 用 <code>yum list nginx</code> 命令列出nginx<br><strong>2.2</strong> 用 <code>sudo yum install nginx</code> 命令安装nginx<br><strong>2.3</strong> 用 <code>sudo service nginx start</code> 命令启动nginx服务<br><strong>2.4</strong> 浏览器中输入服务器的公网IP就可以看见Nginx的欢迎界面了，至此nginx安装完成！</p>
+<h3 id="按顺序安装nginx，php，mysql"><a href="#按顺序安装nginx，php，mysql" class="headerlink" title="按顺序安装nginx，php，mysql"></a>按顺序安装nginx，php，mysql</h3><p><font color="#dd0000"><strong>1.远程连接服务器：</strong></font><br>在阿里云控制台中找到刚刚购买的服务器，点击远程连接图标即可。<br><img src="http://p5qti9zfp.bkt.clouddn.com/web_2.png" alt="web_2.png"><br>有很多远程连接的方法，比如用putty等工具，大家可以去了解一下，后面我也会贴出相关的文章。</p>
+<p><font color="#dd0000"><strong>2.安装nginx：</strong></font><br><strong>2.1</strong> 用 <code>yum list nginx</code> 命令列出nginx<br><strong>2.2</strong> 用 <code>sudo yum install nginx</code> 命令安装nginx<br><strong>2.3</strong> 用 <code>sudo service nginx start</code> 命令启动nginx服务<br><strong>2.4</strong> 浏览器中输入服务器的公网IP就可以看见Nginx的欢迎界面了，至此nginx安装完成！</p>
 <pre><code>[admin@iZwz910y4xddxa2z39yjawZ ~]$ yum list nginx
     //已省略
 nginx.x86_64                        1:1.12.2-2.el7                         epel
@@ -423,7 +423,7 @@ Complete!
 
 [admin@iZwz910y4xddxa2z39yjawZ ~]$ sudo service nginx start
 Redirecting to /bin/systemctl start  nginx.service
-</code></pre><p><strong>3.安装php：</strong><br><strong>3.1</strong> 用 <code>sudo yum -y install php php-fpm</code> 命令安装php和php-fpm软件包<br><strong>3.2</strong> 用 <code>sudo service php-fpm start</code> 命令启动php-fpm服务<br><strong>3.3</strong> 修改nginx配置文件让把php请求转发到php-fpm上：<br>    用 <code>sudo vi /etc/nginx/default.d/default.conf</code> 命令打开文档并添加以下内容：（不知道怎么用vi工具自行百度，很简单）</p>
+</code></pre><p><font color="#dd0000"><strong>3.安装php：</strong></font><br><strong>3.1</strong> 用 <code>sudo yum -y install php php-fpm</code> 命令安装php和php-fpm软件包<br><strong>3.2</strong> 用 <code>sudo service php-fpm start</code> 命令启动php-fpm服务<br><strong>3.3</strong> 修改nginx配置文件让把php请求转发到php-fpm上：<br>    用 <code>sudo vi /etc/nginx/default.d/default.conf</code> 命令打开文档并添加以下内容：（不知道怎么用vi工具自行百度，很简单）</p>
 <pre><code>location ~ \.php$ {
   root /usr/share/nginx/html;
   fastcgi_pass 127.0.0.1:9000;
@@ -435,7 +435,7 @@ Redirecting to /bin/systemctl start  nginx.service
 <pre><code>&lt;?php
     phpinfo();
 </code></pre><p><strong>3.6</strong> 浏览器访问 公网IP/php_info.php 能看到php版本就OK了！</p>
-<p><strong>4.安装mysql(MariaDB)</strong><br><strong>4.1</strong> 用 <code>sudo yum install mariadb-server mariadb</code> 命令安装mariadb<br><strong>4.2</strong> 用 <code>sudo systemctl start mariadb</code> 命令启动mariadb服务<br><strong>4.3</strong> 用 <code>sudo mysql_secure_installation</code> 命令初始化mariadb设置</p>
+<p><font color="#dd0000"><strong>4.安装mysql(MariaDB)</strong></font><br><strong>4.1</strong> 用 <code>sudo yum install mariadb-server mariadb</code> 命令安装mariadb<br><strong>4.2</strong> 用 <code>sudo systemctl start mariadb</code> 命令启动mariadb服务<br><strong>4.3</strong> 用 <code>sudo mysql_secure_installation</code> 命令初始化mariadb设置</p>
 <pre><code>[root@iZwz910y4xddxa2z39yjawZ ~]# sudo mysql_secure_installation
 
     //已省略
@@ -479,7 +479,7 @@ Reload privilege tables now? [Y/n] y         //重载授权信息
 
 Thanks for using MariaDB!
 </code></pre><p><strong>4.4</strong> 用 <code>sudo systemctl enable mariadb</code> 命令设置mariadb自启动</p>
-<p><strong>5.安装phpMyAdmin</strong><br><strong>5.1</strong> 用 <code>yum install phpmyadmin php-mcrypt</code> 命令安装phpMyAdmin<br><strong>5.2</strong> 用 <code>mv /usr/share/phpMyAdmin/ /usr/share/nginx/html/</code> 命令把phpMyAdmin移动到网站根目录下<br><strong>5.3</strong> 用 <code>yum install php-mbstring</code> 命令解决mbstring错误<br><strong>5.4</strong> 用 <code>sudo service php-fpm restart</code> 命令重启php-fpm服务<br><strong>5.5</strong> 浏览器访问 公网IP/phpMyAdmin/index.php 访问phpMyAdmin输入之前安装MariaDB的密码就能管理数据库了</p>
+<p><font color="#dd0000"><strong>5.安装phpMyAdmin</strong></font><br><strong>5.1</strong> 用 <code>yum install phpmyadmin php-mcrypt</code> 命令安装phpMyAdmin<br><strong>5.2</strong> 用 <code>mv /usr/share/phpMyAdmin/ /usr/share/nginx/html/</code> 命令把phpMyAdmin移动到网站根目录下<br><strong>5.3</strong> 用 <code>yum install php-mbstring</code> 命令解决mbstring错误<br><strong>5.4</strong> 用 <code>sudo service php-fpm restart</code> 命令重启php-fpm服务<br><strong>5.5</strong> 浏览器访问 公网IP/phpMyAdmin/index.php 访问phpMyAdmin输入之前安装MariaDB的密码就能管理数据库了</p>
 <h3 id="安装lnmp一键包（推荐）"><a href="#安装lnmp一键包（推荐）" class="headerlink" title="安装lnmp一键包（推荐）"></a>安装lnmp一键包（推荐）</h3><p><strong><em>访问 <a href="https://lnmp.org/" target="_blank" rel="noopener">https://lnmp.org/</a> 即可获取安装方法，这种方法有两个优点：</em></strong><br><em>1，安装简单，官网提供了很详细的安装过程而且很容易，这里不再阐述</em><br><em>2，php版本切换方便，它提供了多种版本的php版本，切换php版本非常方便</em></p>
 <blockquote>
 <p><strong>对本篇文章有任何建议和其他帮助欢迎mail:<a href="mailto:879815165@qq.com" target="_blank" rel="noopener">879815165@qq.com</a></strong></p>
