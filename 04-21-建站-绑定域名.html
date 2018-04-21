@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/18_4_22_3.png">
 <meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/18_4_22_1.png">
 <meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/18_4_22_2.png">
-<meta property="og:updated_time" content="2018-04-21T15:06:24.925Z">
+<meta property="og:updated_time" content="2018-04-21T15:11:54.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="建站（3）-绑定域名">
 <meta name="twitter:description" content="我们的站点虽然已经搭建好了，但是用公网IP访问我们的站点实在太费劲了，所以我们需要购买一个便于记忆的域名并于我们的站点建立对接！其实这也非常容易，开始吧！ 一，购买域名去阿里云选择一个你喜欢的域名进行购买，相信花钱对大家来说不会是一件难事吧！所以这里就不再阐述了！">
@@ -405,7 +405,7 @@
         <p>我们的站点虽然已经搭建好了，但是用公网IP访问我们的站点实在太费劲了，所以我们需要购买一个便于记忆的域名并于我们的站点建立对接！其实这也非常容易，开始吧！</p>
 <h2 id="一，购买域名"><a href="#一，购买域名" class="headerlink" title="一，购买域名"></a>一，购买域名</h2><p>去阿里云选择一个你喜欢的域名进行购买，相信花钱对大家来说不会是一件难事吧！所以这里就不再阐述了！<a id="more"></a></p>
 <h2 id="二，配置nginx-conf"><a href="#二，配置nginx-conf" class="headerlink" title="二，配置nginx.conf"></a>二，配置nginx.conf</h2><p>1，用 <code>vi /etc/nginx/nginx.conf</code> 命令打开nginx.conf配置文件<br>2，设置server_name为你购买的域名<br><img src="http://p5qti9zfp.bkt.clouddn.com/18_4_22_3.png" alt="18_4_22_3.png"><br>3，用 service nginx restart 命令重启nginx服务</p>
-<h2 id="三，域名服务器（DNS）解析"><a href="#三，域名服务器（DNS）解析" class="headerlink" title="三，域名服务器（DNS）解析"></a>三，域名服务器（DNS）解析</h2><p>1，进入阿里云控制台找到域名列表点击解析<br><img src="http://p5qti9zfp.bkt.clouddn.com/18_4_22_1.png" alt="18_4_22_1.png"><br>2，添加解析如下<br><img src="http://p5qti9zfp.bkt.clouddn.com/18_4_22_2.png" alt="18_4_22_2.png"><br>3,浏览器输入 <a href="http://www.hebaochina.top/wordpress（改为你的域名）" target="_blank" rel="noopener">www.hebaochina.top/wordpress（改为你的域名）</a> 即可访问！</p>
+<h2 id="三，域名服务器（DNS）解析"><a href="#三，域名服务器（DNS）解析" class="headerlink" title="三，域名服务器（DNS）解析"></a>三，域名服务器（DNS）解析</h2><p>1，进入阿里云控制台找到域名列表点击解析<br><img src="http://p5qti9zfp.bkt.clouddn.com/18_4_22_1.png" alt="18_4_22_1.png"><br>2，添加解析如下<br><img src="http://p5qti9zfp.bkt.clouddn.com/18_4_22_2.png" alt="18_4_22_2.png"><br>3,浏览器输入 <code>www.hebaochina.top/wordpress（改为你的域名）</code> 即可访问！</p>
 <blockquote>
 <p><strong>对本篇文章有任何建议和其他帮助欢迎mail:<a href="mailto:879815165@qq.com" target="_blank" rel="noopener">879815165@qq.com</a></strong></p>
 </blockquote>
