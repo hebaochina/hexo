@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[建站（2）-安装wordpress]]></title>
-    <url>%2F04-21-cjg92ym8k0003wsr4akfc1xjf.html</url>
+    <url>%2F04-21-%E5%BB%BA%E7%AB%99-wordpress.html</url>
     <content type="text"><![CDATA[前面把服务器环境搭建完成了，随着近几年网络的快速发展，出现了很多CMS建站系统，例如织梦和discuz等。如果你想拥有一个博客，那么我建议你选择wordpress建站系统，我总结了如下几点： 1，易于安装，管理：安装过程几十秒就OK，简单的后台管理系统可以让你几分钟上手wordpress； 2，庞大的用户量：大家可以去了解一下wordpress的市场占有率，这就代表着遇到问题的时候你可以很容易的找到答案； 3，丰富的主题和插件资源：它可以让你的站点更强大，由于主题资源的丰富，现在wordpress不仅仅是作为博客系统存在了，很多网上商城就杀死利用wordpress来搭建的； 4，便于升级，迁移：有升级的时候登陆网站后台很容易直接点击升级就OK了，迁移网站也只需要生成一个xml文件就可以了。 开始我们的wordpress之旅吧！ 一，建立wordpress数据库上一篇文章我们已经安装了phpMyAdmin，那么建立一个新的数据就很容易了。1，登陆phpMyAdmin：这一步就不再多嘴了;2，建立wordpress数据库：如下图 二，配置nginx.conf文件1，用 vi /etc/nginx/nginx.conf 命令打开nginx.conf文件;2，找到server配置，修改如下图3，用 service nginx restart 命令重启nginx服务。 三，下载安装wordpress1，用 cd /usr/share/nginx/html 命令进入网站更目录;2，用 wget https://cn.wordpress.org/wordpress-4.9.4-zh_CN.zip 命令下载wordpress;3，用 yum install unzip 命令安装unzip解压程序;4，用 unzip wordpress-4.9.4-zh_CN.zip 命令解压wordpress.zip安装包;5，浏览器访问 公网IP/wordpress/wp-admin/setup-config.php 进入wordpress安装程序;6，跟着wordpress提示step by step就OK了！ 对本篇文章有任何建议和其他帮助欢迎mail:879815165@qq.com]]></content>
       <tags>
         <tag>web,wordpress</tag>
@@ -10,7 +10,7 @@
   </entry>
   <entry>
     <title><![CDATA[建站（1）-服务器配置]]></title>
-    <url>%2F04-18-cjg92ym8s0005wsr4evyl8w9w.html</url>
+    <url>%2F04-18-%E5%BB%BA%E7%AB%99-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83.html</url>
     <content type="text"><![CDATA[我相信大家都希望拥有一个自己的网站，并且想把它打扮得漂漂亮亮后向外界展示，其实建立一个自己的网站并不难，而且利用网上的资源可以很容易的把它布置得很漂亮很精致，我相信大家看完整套笔记可以很快速的搭建起自己的网站，这套笔记是个人对建站的理解，如果有不严谨的地方请读者不吝指教。 建站的第一步当然是服务器的配置了，万事开头难，其实也不难。服务器的配置包括系统镜像的安装，配置网站环境两部分。 一，系统镜像的安装 我推荐用阿里云的服务器，原因很简单，因为它为大学生提供了9.9优惠云服务器，极大的减轻了开发成本。大家去阿里云官网购买一台优惠云服务器过后就可以进行系统镜像的安装了，我推荐的系统是Linux，原因也很简单，安全（开源）而强大，一个搞运维的朋友告诉我他的云服务器已经三年没重启了，换作是一台Windows早就卡死了。 去阿里云官网购买一台云服务器，学生有9.9优惠的云服务器，阿里云新用户也有免费的体验云服务器。阿里云会为我们提供系统的镜像，如下图：阿里云现在提供了预装wordpress的镜像，大家也可以去尝试一下。 二，配置网站环境网站环境一共有三个核心部分，nginx反向代理服务器，php后端交互，mysql数据库管理，当然你也可以使用apache等，这里只对linux+nginx+php+mysql（lnmp）的安装进行讲解。介绍两种安装方式（推荐第二种方式）： 按顺序安装nginx，php，mysql1.远程连接服务器：在阿里云控制台中找到刚刚购买的服务器，点击远程连接图标即可。有很多远程连接的方法，比如用putty等工具，大家可以去了解一下，后面我也会贴出相关的文章。 2.安装nginx：2.1 用 yum list nginx 命令列出nginx2.2 用 sudo yum install nginx 命令安装nginx2.3 用 sudo service nginx start 命令启动nginx服务2.4 浏览器中输入服务器的公网IP就可以看见Nginx的欢迎界面了，至此nginx安装完成！ [admin@iZwz910y4xddxa2z39yjawZ ~]$ yum list nginx //已省略 nginx.x86_64 1:1.12.2-2.el7 epel [admin@iZwz910y4xddxa2z39yjawZ ~]$ sudo yum install nginx //已省略 Total download size: 4.9 M Is this ok [y/d/N]: y //已省略 Complete! [admin@iZwz910y4xddxa2z39yjawZ ~]$ sudo service nginx start Redirecting to /bin/systemctl start nginx.service 3.安装php：3.1 用 sudo yum -y install php php-fpm 命令安装php和php-fpm软件包3.2 用 sudo service php-fpm start 命令启动php-fpm服务3.3 修改nginx配置文件让把php请求转发到php-fpm上： 用 sudo vi /etc/nginx/default.d/default.conf 命令打开文档并添加以下内容：（不知道怎么用vi工具自行百度，很简单） location ~ \.php$ { root /usr/share/nginx/html; fastcgi_pass 127.0.0.1:9000; fastcgi_index index.php; fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; include fastcgi_params; } 3.4 用 sudo service nginx restart 命令重启nginx服务3.5 在网站根目录添加php_info.php文件测试php-fpm服务 用 sudo vi /usr/share/nginx/html/php_info.php 命令打开文档并添加以下内容： &lt;?php phpinfo(); 3.6 浏览器访问 公网IP/php_info.php 能看到php版本就OK了！ 4.安装mysql(MariaDB)4.1 用 sudo yum install mariadb-server mariadb 命令安装mariadb4.2 用 sudo systemctl start mariadb 命令启动mariadb服务4.3 用 sudo mysql_secure_installation 命令初始化mariadb设置 [root@iZwz910y4xddxa2z39yjawZ ~]# sudo mysql_secure_installation //已省略 Enter current password for root (enter for none): //输入密码，默认密码为空直接回车即可 OK, successfully used password, moving on... Setting the root password ensures that nobody can log into the MariaDB root user without the proper authorisation. You already have a root password set, so you can safely answer &apos;n&apos;. Change the root password? [Y/n] y //设置root密码 New password: Re-enter new password: //确认密码 Password updated successfully! Reloading privilege tables.. ... Success! //已省略 Remove anonymous users? [Y/n] n //开启匿名访问 ... skipping. //已省略 Disallow root login remotely? [Y/n] n //允许root远程登陆 ... skipping. //已省略 Remove test database and access to it? [Y/n] n //删除t测试数据库test ... skipping. //已省略 Reload privilege tables now? [Y/n] y //重载授权信息 ... Success! //已省略 Thanks for using MariaDB! 4.4 用 sudo systemctl enable mariadb 命令设置mariadb自启动 5.安装phpMyAdmin5.1 用 yum install phpmyadmin php-mcrypt 命令安装phpMyAdmin5.2 用 mv /usr/share/phpMyAdmin/ /usr/share/nginx/html/ 命令把phpMyAdmin移动到网站根目录下5.3 用 yum install php-mbstring 命令解决mbstring错误5.4 用 sudo service php-fpm restart 命令重启php-fpm服务5.5 浏览器访问 公网IP/phpMyAdmin/index.php 访问phpMyAdmin输入之前安装MariaDB的密码就能管理数据库了 安装lnmp一键包（推荐）访问 https://lnmp.org/ 即可获取安装方法，这种方法有两个优点：1，安装简单，官网提供了很详细的安装过程而且很容易，这里不再阐述2，php版本切换方便，它提供了多种版本的php版本，切换php版本非常方便 对本篇文章有任何建议和其他帮助欢迎mail:879815165@qq.com]]></content>
       <tags>
         <tag>web</tag>
@@ -18,7 +18,7 @@
   </entry>
   <entry>
     <title><![CDATA[AndroidStudio]]></title>
-    <url>%2F03-21-cjg92ym8b0002wsr4hpziln18.html</url>
+    <url>%2F03-21-AndroidStudio.html</url>
     <content type="text"><![CDATA[Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。 一，下载JDK和AS首先mark一个网址http://www.androiddevtools.cn/在这个网站里面可以下载各种安卓开发的工具，包括JDK，AS安装包和一些其他安卓开发过程会用到的工具和软件。下载JDK和AS要注意JDK的版本支持AS版本，这是笔者遇到的第一的坑，开始下载的JDK1.7+AS3.0导致后面AS里面打不开Android SDK Monitor，后来把JDK1.7换成JDK1.8就成功解决了这一问题，所以我建议大家下载JDK1.8和AS3.0。 二，配置java环境安装JDKJDK下载完成后点击安装，一直默认即可（自定义安装需要记住安装目录） 配置环境变量不知道如何进入环境变量设置界面可以百度一下，我们需要添加两条环境变量：2.2.1 新建一条JAVA_HOME环境变量,如下图，变量具体指自己确定2.2.2 在PATH变量末尾追加一个变量值，千万注意是追加，不要作死去把之前的变量值全部删除了，追加的内容如下图，变量具体值自己确定 测试java环境打开cmd输入java -version和javac -version能正常输出java版本号即安装成功 三，安装ASAS下载完成后一直默认安装即可，第一次安装会出现提示没有安装SDK，点击Cancel即可出现下图所示界面即代表AS安装成功了 四，搭建真机调试环境完成上面三个步骤的时候我以为就可以开始安卓开发了，但是我们很多时候会对我们的项目进行调试，真机调试是必不可少的一道程序，这个时候我们还应把真机调试的环境搭建好才能开始真正的安卓开发之旅。 配置adb环境AS已经为我们下载了adb.exe但是需要我们自己找到它的路径并添加到系统环境变量里面，我们找到SDK的路径把它的platform-tools子目录添加到PATH环境变量里面即可。SDK的文件目录一般在C:\Users\你的计算机用户名\AppData\Local\Android\Sdk。环境变量添加完过后可以打开cmd输入adb测试一下。 安装adb interface驱动当你手机打开调试模式，AS还是提示no target device found 你打开系统设备管理器就会发现便携设备下面会有一个带有感叹号的adb interface。这个时候你就很容易通过百度知道安装adb interface驱动的方法了，也许安装驱动的过程你还会遇到一个找不到哈希值导致驱动安装失败的提示，你也可以通过百度知道答案，在这里我就不一一累赘阐述了。 对本篇文章有任何建议和其他帮助欢迎mail:879815165@qq.com]]></content>
       <tags>
         <tag>Android</tag>
@@ -26,7 +26,7 @@
   </entry>
   <entry>
     <title><![CDATA[高效使用windows]]></title>
-    <url>%2F03-18-cjg92ym8v0006wsr4reo32n76.html</url>
+    <url>%2F03-18-%E9%AB%98%E6%95%88%E4%BD%BF%E7%94%A8windows.html</url>
     <content type="text"><![CDATA[我们每天都在打开使用自己的windows，但你不一定真正了解自己的windows，你能在10s钟的时间内能找出你两天前或者是一天前在网上下载的文件吗？很多人都不敢肯定的回答这个问题，我相信这篇文章可以帮助你以更高的效率来认识并管理自己的windows。 一，简洁的硬盘分区硬盘建议分成4-6个区块，一块硬盘分区越多，利用率就会越差而且跨区传输文件速率也会有明显下降，为了方便管理自己的文件我们应该分配不同硬盘区块以不同的任务。大家可以根据自己的需求调整各个区块所分配的内存大小，下面是1TB硬盘的分区情况供读者参考：C盘：系统盘 软件所需的运行环境和文件，一些文件的暂存盘，常用的软件（例如RAR）D盘：软件盘 安装不常用的工具软件(QQ等)E盘：资料盘 多媒体文件，珍藏的软件工具或者是其他网上难以找到的资源F盘：工作盘 近期需要的文件或者经常使用的文件，ppt之类的G盘：预留盘 为双系统预留 二，丰富的文件夹文件可以帮助你对资料进行归档区分，建立文件夹可以大幅提高你寻找文件的效率，具体使用示例如下：1，安装软件的时候为软件创建一个专门的文件夹，便于软件的管理和卸载，比如在我的D盘里面建立一个名为QQ的文件夹用于安装QQ；2，不同的文件类型放在一个独立的文件里面，比如在E盘中建立一个名为多媒体的文件夹用于存放多媒体资源。 三，干净的桌面你的桌面是否由几十个文件或者文件夹再加上十几个应用的图标组成的？如果是，是时候做出改变了：1，为所有的应用图标建立一个新家庭，即在桌面为它们新建一个名为software的文件夹；2，把桌面的文件进行分类存放，比如在桌面新建一个名为文档的文件夹用于存放ppt和word之类的文件；3，工具栏的快捷使用：右键状态栏空白处-&gt;点击工具栏-&gt;点击新建工具栏-&gt;选择文件夹-&gt;OK！ 四，个性化的windows1，更换文件夹图标鼠标右键点击文件夹依次选择属性-&gt;自定义-&gt;更改图标你可以去百度下载一些自己喜欢的图标，网上这样的资源很多，一定会找到符合你口味的图标；2，更换新的鼠标指针百度windows鼠标主题记忆可以找到资源了，下载完自己喜欢的鼠标主题后只要双击文件就可以为你换上新的鼠标指针了；3，状态栏透明win10可以下载TranslucentTB，其他版本windows下载Startisback。TranslucentTB比Startisback所占内存小得多，运行的时候几乎不占内存，但它是用的win10的API，所以其他版本的windows不能用；Startisback功能很强大，除了使状态栏透明之外还可以做很多东西，如果物理内存允许的的话，不妨试一试。 对本篇文章有任何建议和其他帮助欢迎mail:879815165@qq.com]]></content>
       <tags>
         <tag>win</tag>
@@ -34,7 +34,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hello]]></title>
-    <url>%2F03-17-cjg92ym7z0000wsr4qm0ojmw4.html</url>
+    <url>%2F03-17-Hello.html</url>
     <content type="text"><![CDATA[原hebaochina.top已从阿里云搬迁到这里，感谢coding提供的page服务和hexo提供的静态博客系统，当然还要感谢hexo博客主题的设计大师们。用这些免费的服务我们可以轻易的在偌大的网络世界建立自己的个人博客。其实原来用阿里云提供的学生优惠服务器也非常实惠，但现在我只需要一个静态博客就行了，所以暂放弃了阿里云服务器来到coding，阿里云服务器上面的文章会陆续在此博客上发布并且会不定时更新一些文章，请关注此博客。]]></content>
   </entry>
 </search>

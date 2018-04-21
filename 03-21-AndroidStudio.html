@@ -99,29 +99,30 @@
 
 
 
-  <meta name="description" content="前面把服务器环境搭建完成了，随着近几年网络的快速发展，出现了很多CMS建站系统，例如织梦和discuz等。如果你想拥有一个博客，那么我建议你选择wordpress建站系统，我总结了如下几点：">
-<meta name="keywords" content="web,wordpress">
+  <meta name="description" content="Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。  一，下载JDK和AS">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="建站（2）-安装wordpress">
-<meta property="og:url" content="http://yoursite.com/04-21-cjg92ym8k0003wsr4akfc1xjf.html">
+<meta property="og:title" content="AndroidStudio">
+<meta property="og:url" content="http://yoursite.com/03-21-AndroidStudio.html">
 <meta property="og:site_name" content="HeBaoChina">
-<meta property="og:description" content="前面把服务器环境搭建完成了，随着近几年网络的快速发展，出现了很多CMS建站系统，例如织梦和discuz等。如果你想拥有一个博客，那么我建议你选择wordpress建站系统，我总结了如下几点：">
+<meta property="og:description" content="Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。  一，下载JDK和AS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/18_4_21_1.png">
-<meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/18_4_21_2.png">
-<meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/18_4_21_3.png">
-<meta property="og:updated_time" content="2018-04-21T07:39:46.114Z">
+<meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/AS1.png">
+<meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/AS2.png">
+<meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/AS3.png">
+<meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/AS4.png">
+<meta property="og:updated_time" content="2018-04-18T15:01:37.059Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="建站（2）-安装wordpress">
-<meta name="twitter:description" content="前面把服务器环境搭建完成了，随着近几年网络的快速发展，出现了很多CMS建站系统，例如织梦和discuz等。如果你想拥有一个博客，那么我建议你选择wordpress建站系统，我总结了如下几点：">
-<meta name="twitter:image" content="http://p5qti9zfp.bkt.clouddn.com/18_4_21_1.png">
+<meta name="twitter:title" content="AndroidStudio">
+<meta name="twitter:description" content="Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。  一，下载JDK和AS">
+<meta name="twitter:image" content="http://p5qti9zfp.bkt.clouddn.com/AS1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/04-21-cjg92ym8k0003wsr4akfc1xjf.html"/>
+  <link rel="canonical" href="http://yoursite.com/03-21-AndroidStudio.html"/>
 
 
 
@@ -131,7 +132,7 @@
   };
 </script>
 
-  <title>建站（2）-安装wordpress | HeBaoChina</title>
+  <title>AndroidStudio | HeBaoChina</title>
   
 
 
@@ -336,7 +337,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/04-21-cjg92ym8k0003wsr4akfc1xjf.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/03-21-AndroidStudio.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HeBaoChina">
@@ -353,7 +354,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">建站（2）-安装wordpress</h1>
+          <h1 class="post-title" itemprop="name headline">AndroidStudio</h1>
         
 
         <div class="post-meta">
@@ -365,7 +366,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-21T15:30:08+08:00">2018-04-21</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T15:30:26+08:00">2018-03-21</time>
             
 
             
@@ -402,15 +403,17 @@
       
 
       
-        <p>前面把服务器环境搭建完成了，随着近几年网络的快速发展，出现了很多CMS建站系统，例如织梦和discuz等。如果你想拥有一个博客，那么我建议你选择wordpress建站系统，我总结了如下几点：<a id="more"></a></p>
-<pre><code>1，易于安装，管理：安装过程几十秒就OK，简单的后台管理系统可以让你几分钟上手wordpress；
-2，庞大的用户量：大家可以去了解一下wordpress的市场占有率，这就代表着遇到问题的时候你可以很容易的找到答案；
-3，丰富的主题和插件资源：它可以让你的站点更强大，由于主题资源的丰富，现在wordpress不仅仅是作为博客系统存在了，很多网上商城就杀死利用wordpress来搭建的；
-4，便于升级，迁移：有升级的时候登陆网站后台很容易直接点击升级就OK了，迁移网站也只需要生成一个xml文件就可以了。
-</code></pre><p><font color="#dd0000"><strong>开始我们的wordpress之旅吧！</strong></font></p>
-<h2 id="一，建立wordpress数据库"><a href="#一，建立wordpress数据库" class="headerlink" title="一，建立wordpress数据库"></a>一，建立wordpress数据库</h2><p>上一篇文章我们已经安装了phpMyAdmin，那么建立一个新的数据就很容易了。<br>1，登陆phpMyAdmin：这一步就不再多嘴了;<br>2，建立wordpress数据库：如下图<br><img src="http://p5qti9zfp.bkt.clouddn.com/18_4_21_1.png" alt="18_4_21_1.png"></p>
-<h2 id="二，配置nginx-conf文件"><a href="#二，配置nginx-conf文件" class="headerlink" title="二，配置nginx.conf文件"></a>二，配置nginx.conf文件</h2><p>1，用 <code>vi /etc/nginx/nginx.conf</code> 命令打开nginx.conf文件;<br>2，找到server配置，修改如下图<br><img src="http://p5qti9zfp.bkt.clouddn.com/18_4_21_2.png" alt="18_4_21_2.png"><br>3，用 <code>service nginx restart</code> 命令重启nginx服务。</p>
-<h2 id="三，下载安装wordpress"><a href="#三，下载安装wordpress" class="headerlink" title="三，下载安装wordpress"></a>三，下载安装wordpress</h2><p>1，用 <code>cd /usr/share/nginx/html</code> 命令进入网站更目录;<br>2，用 <code>wget https://cn.wordpress.org/wordpress-4.9.4-zh_CN.zip</code> 命令下载wordpress;<br>3，用 <code>yum install unzip</code> 命令安装unzip解压程序;<br>4，用 <code>unzip wordpress-4.9.4-zh_CN.zip</code> 命令解压wordpress.zip安装包;<br>5，浏览器访问 <code>公网IP/wordpress/wp-admin/setup-config.php</code> 进入wordpress安装程序;<br><img src="http://p5qti9zfp.bkt.clouddn.com/18_4_21_3.png" alt="18_4_21_3.png"><br>6，跟着wordpress提示step by step就OK了！</p>
+        <blockquote>
+<p>Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。</p>
+</blockquote>
+<h2 id="一，下载JDK和AS"><a href="#一，下载JDK和AS" class="headerlink" title="一，下载JDK和AS"></a>一，下载JDK和AS</h2><p><a id="more"></a>首先mark一个网址<a href="http://www.androiddevtools.cn/" target="_blank" rel="noopener">http://www.androiddevtools.cn/</a><br>在这个网站里面可以下载各种安卓开发的工具，包括JDK，AS安装包和一些其他安卓开发过程会用到的工具和软件。<br>下载JDK和AS要注意JDK的版本支持AS版本，这是笔者遇到的第一的坑，开始下载的JDK1.7+AS3.0导致后面AS里面打不开Android SDK Monitor，后来把JDK1.7换成JDK1.8就成功解决了这一问题，所以我建议大家下载JDK1.8和AS3.0。</p>
+<h2 id="二，配置java环境"><a href="#二，配置java环境" class="headerlink" title="二，配置java环境"></a>二，配置java环境</h2><h3 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h3><p>JDK下载完成后点击安装，一直默认即可（自定义安装需要记住安装目录）</p>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>不知道如何进入环境变量设置界面可以百度一下，我们需要添加两条环境变量：<br><strong>2.2.1</strong> 新建一条JAVA_HOME环境变量,如下图，变量具体指自己确定<br><img src="http://p5qti9zfp.bkt.clouddn.com/AS1.png" alt="此处输入图片的描述"><br><strong>2.2.2</strong> 在PATH变量末尾追加一个变量值，千万注意是追加，不要作死去把之前的变量值全部删除了，追加的内容如下图，变量具体值自己确定<br><img src="http://p5qti9zfp.bkt.clouddn.com/AS2.png" alt="此处输入图片的描述"></p>
+<h3 id="测试java环境"><a href="#测试java环境" class="headerlink" title="测试java环境"></a>测试java环境</h3><p>打开cmd输入java -version和javac -version能正常输出java版本号即安装成功</p>
+<h2 id="三，安装AS"><a href="#三，安装AS" class="headerlink" title="三，安装AS"></a>三，安装AS</h2><p>AS下载完成后一直默认安装即可，第一次安装会出现提示没有安装SDK，点击Cancel即可<br><img src="http://p5qti9zfp.bkt.clouddn.com/AS3.png" alt="此处输入图片的描述"><br>出现下图所示界面即代表AS安装成功了<br><img src="http://p5qti9zfp.bkt.clouddn.com/AS4.png" alt="此处输入图片的描述"></p>
+<h2 id="四，搭建真机调试环境"><a href="#四，搭建真机调试环境" class="headerlink" title="四，搭建真机调试环境"></a>四，搭建真机调试环境</h2><p>完成上面三个步骤的时候我以为就可以开始安卓开发了，但是我们很多时候会对我们的项目进行调试，真机调试是必不可少的一道程序，这个时候我们还应把真机调试的环境搭建好才能开始真正的安卓开发之旅。</p>
+<h3 id="配置adb环境"><a href="#配置adb环境" class="headerlink" title="配置adb环境"></a>配置adb环境</h3><p>AS已经为我们下载了adb.exe但是需要我们自己找到它的路径并添加到系统环境变量里面，我们找到SDK的路径把它的platform-tools子目录添加到PATH环境变量里面即可。SDK的文件目录一般在C:\Users\你的计算机用户名\AppData\Local\Android\Sdk。环境变量添加完过后可以打开cmd输入adb测试一下。</p>
+<h3 id="安装adb-interface驱动"><a href="#安装adb-interface驱动" class="headerlink" title="安装adb interface驱动"></a>安装adb interface驱动</h3><p>当你手机打开调试模式，AS还是提示no target device found 你打开系统设备管理器就会发现便携设备下面会有一个带有感叹号的adb interface。这个时候你就很容易通过百度知道安装adb interface驱动的方法了，也许安装驱动的过程你还会遇到一个找不到哈希值导致驱动安装失败的提示，你也可以通过百度知道答案，在这里我就不一一累赘阐述了。</p>
 <blockquote>
 <p><strong>对本篇文章有任何建议和其他帮助欢迎mail:<a href="mailto:879815165@qq.com" target="_blank" rel="noopener">879815165@qq.com</a></strong></p>
 </blockquote>
@@ -442,7 +445,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/web-wordpress/" rel="tag"># web,wordpress</a>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
         </div>
       
@@ -455,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/04-18-cjg92ym8s0005wsr4evyl8w9w.html" rel="next" title="建站（1）-服务器配置">
-                <i class="fa fa-chevron-left"></i> 建站（1）-服务器配置
+              <a href="/03-18-高效使用windows.html" rel="next" title="高效使用windows">
+                <i class="fa fa-chevron-left"></i> 高效使用windows
               </a>
             
           </div>
@@ -464,6 +467,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/04-18-建站-搭建环境.html" rel="prev" title="建站（1）-服务器配置">
+                建站（1）-服务器配置 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -620,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，建立wordpress数据库"><span class="nav-number">1.</span> <span class="nav-text">一，建立wordpress数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二，配置nginx-conf文件"><span class="nav-number">2.</span> <span class="nav-text">二，配置nginx.conf文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三，下载安装wordpress"><span class="nav-number">3.</span> <span class="nav-text">三，下载安装wordpress</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，下载JDK和AS"><span class="nav-number">1.</span> <span class="nav-text">一，下载JDK和AS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二，配置java环境"><span class="nav-number">2.</span> <span class="nav-text">二，配置java环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装JDK"><span class="nav-number">2.1.</span> <span class="nav-text">安装JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量"><span class="nav-number">2.2.</span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试java环境"><span class="nav-number">2.3.</span> <span class="nav-text">测试java环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三，安装AS"><span class="nav-number">3.</span> <span class="nav-text">三，安装AS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四，搭建真机调试环境"><span class="nav-number">4.</span> <span class="nav-text">四，搭建真机调试环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置adb环境"><span class="nav-number">4.1.</span> <span class="nav-text">配置adb环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装adb-interface驱动"><span class="nav-number">4.2.</span> <span class="nav-text">安装adb interface驱动</span></a></li></ol></li></ol></div>
             
 
           </div>
