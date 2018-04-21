@@ -107,13 +107,13 @@
 <meta property="og:site_name" content="HeBaoChina">
 <meta property="og:description" content="我相信大家都希望拥有一个自己的网站，并且想把它打扮得漂漂亮亮后向外界展示，其实建立一个自己的网站并不难，而且利用网上的资源可以很容易的把它布置得很漂亮很精致，我相信大家看完整套笔记可以很快速的搭建起自己的网站，这套笔记是个人对建站的理解，如果有不严谨的地方请读者不吝指教。 建站的第一步当然是服务器的配置了，万事开头难，其实也不难。服务器的配置包括系统镜像的安装，配置网站环境两部分。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/web_1.png">
-<meta property="og:image" content="http://p5qti9zfp.bkt.clouddn.com/web_2.png">
-<meta property="og:updated_time" content="2018-04-18T15:09:57.769Z">
+<meta property="og:image" content="http://cdn.hebaochina.top/web_1.png">
+<meta property="og:image" content="http://cdn.hebaochina.top/web_2.png">
+<meta property="og:updated_time" content="2018-04-21T15:51:06.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="建站（1）-服务器配置">
 <meta name="twitter:description" content="我相信大家都希望拥有一个自己的网站，并且想把它打扮得漂漂亮亮后向外界展示，其实建立一个自己的网站并不难，而且利用网上的资源可以很容易的把它布置得很漂亮很精致，我相信大家看完整套笔记可以很快速的搭建起自己的网站，这套笔记是个人对建站的理解，如果有不严谨的地方请读者不吝指教。 建站的第一步当然是服务器的配置了，万事开头难，其实也不难。服务器的配置包括系统镜像的安装，配置网站环境两部分。">
-<meta name="twitter:image" content="http://p5qti9zfp.bkt.clouddn.com/web_1.png">
+<meta name="twitter:image" content="http://cdn.hebaochina.top/web_1.png">
 
 
 
@@ -406,9 +406,9 @@
 <h2 id="一，系统镜像的安装"><a href="#一，系统镜像的安装" class="headerlink" title="一，系统镜像的安装"></a>一，系统镜像的安装</h2><blockquote>
 <p><strong>我推荐用阿里云的服务器，原因很简单，因为它为大学生提供了9.9优惠云服务器，极大的减轻了开发成本。大家去阿里云官网购买一台优惠云服务器过后就可以进行系统镜像的安装了，我推荐的系统是Linux，原因也很简单，安全（开源）而强大，一个搞运维的朋友告诉我他的云服务器已经三年没重启了，换作是一台Windows早就卡死了。</strong></p>
 </blockquote>
-<p>去阿里云官网购买一台云服务器，学生有9.9优惠的云服务器，阿里云新用户也有免费的体验云服务器。阿里云会为我们提供系统的镜像，如下图：<br><img src="http://p5qti9zfp.bkt.clouddn.com/web_1.png" alt="web_1.png"><br>阿里云现在提供了预装wordpress的镜像，大家也可以去尝试一下。</p>
+<p>去阿里云官网购买一台云服务器，学生有9.9优惠的云服务器，阿里云新用户也有免费的体验云服务器。阿里云会为我们提供系统的镜像，如下图：<br><img src="http://cdn.hebaochina.top/web_1.png" alt="web_1.png"><br>阿里云现在提供了预装wordpress的镜像，大家也可以去尝试一下。</p>
 <h2 id="二，配置网站环境"><a href="#二，配置网站环境" class="headerlink" title="二，配置网站环境"></a>二，配置网站环境</h2><p>网站环境一共有三个核心部分，nginx反向代理服务器，php后端交互，mysql数据库管理，当然你也可以使用apache等，这里只对linux+nginx+php+mysql（lnmp）的安装进行讲解。介绍两种安装方式（推荐第二种方式）：</p>
-<h3 id="按顺序安装nginx，php，mysql"><a href="#按顺序安装nginx，php，mysql" class="headerlink" title="按顺序安装nginx，php，mysql"></a>按顺序安装nginx，php，mysql</h3><p><font color="#dd0000"><strong>1.远程连接服务器：</strong></font><br>在阿里云控制台中找到刚刚购买的服务器，点击远程连接图标即可。<br><img src="http://p5qti9zfp.bkt.clouddn.com/web_2.png" alt="web_2.png"><br>有很多远程连接的方法，比如用putty等工具，大家可以去了解一下，后面我也会贴出相关的文章。</p>
+<h3 id="按顺序安装nginx，php，mysql"><a href="#按顺序安装nginx，php，mysql" class="headerlink" title="按顺序安装nginx，php，mysql"></a>按顺序安装nginx，php，mysql</h3><p><font color="#dd0000"><strong>1.远程连接服务器：</strong></font><br>在阿里云控制台中找到刚刚购买的服务器，点击远程连接图标即可。<br><img src="http://cdn.hebaochina.top/web_2.png" alt="web_2.png"><br>有很多远程连接的方法，比如用putty等工具，大家可以去了解一下，后面我也会贴出相关的文章。</p>
 <p><font color="#dd0000"><strong>2.安装nginx：</strong></font><br><strong>2.1</strong> 用 <code>yum list nginx</code> 命令列出nginx<br><strong>2.2</strong> 用 <code>sudo yum install nginx</code> 命令安装nginx<br><strong>2.3</strong> 用 <code>sudo service nginx start</code> 命令启动nginx服务<br><strong>2.4</strong> 浏览器中输入服务器的公网IP就可以看见Nginx的欢迎界面了，至此nginx安装完成！</p>
 <pre><code>[admin@iZwz910y4xddxa2z39yjawZ ~]$ yum list nginx
     //已省略
