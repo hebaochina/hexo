@@ -99,22 +99,22 @@
 
 
 
-  <meta name="description" content="Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。  一，下载JDK和AS">
+  <meta name="description" content="Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。  一，下载JDK和AS首先mark一个网址http://www.androiddevtools.cn/在这个网站里面可以下载各种安卓开发">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AndroidStudio">
 <meta property="og:url" content="http://hebaochina.top/03-21-AndroidStudio.html">
 <meta property="og:site_name" content="HeBaoChina">
-<meta property="og:description" content="Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。  一，下载JDK和AS">
+<meta property="og:description" content="Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。  一，下载JDK和AS首先mark一个网址http://www.androiddevtools.cn/在这个网站里面可以下载各种安卓开发">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://cdn.hebaochina.top/AS1.png">
 <meta property="og:image" content="http://cdn.hebaochina.top/AS2.png">
 <meta property="og:image" content="http://cdn.hebaochina.top/AS3.png">
 <meta property="og:image" content="http://cdn.hebaochina.top/AS4.png">
-<meta property="og:updated_time" content="2018-04-26T07:38:35.615Z">
+<meta property="og:updated_time" content="2018-04-26T10:27:00.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AndroidStudio">
-<meta name="twitter:description" content="Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。  一，下载JDK和AS">
+<meta name="twitter:description" content="Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。  一，下载JDK和AS首先mark一个网址http://www.androiddevtools.cn/在这个网站里面可以下载各种安卓开发">
 <meta name="twitter:image" content="http://cdn.hebaochina.top/AS1.png">
 
 
@@ -416,7 +416,7 @@
         <blockquote>
 <p>Google抛弃了Eclipse Android，是时候在安装Android Studio了。我也是近期才接触安卓的开发，没想到第一步就走了很多弯路，这篇博客主要是记录本人安装AS（Android Studio）的过程和遇到的坑，希望可以帮助大家顺利安装AS。</p>
 </blockquote>
-<h2 id="一，下载JDK和AS"><a href="#一，下载JDK和AS" class="headerlink" title="一，下载JDK和AS"></a>一，下载JDK和AS</h2><p><a id="more"></a>首先mark一个网址<a href="http://www.androiddevtools.cn/" target="_blank" rel="noopener">http://www.androiddevtools.cn/</a><br>在这个网站里面可以下载各种安卓开发的工具，包括JDK，AS安装包和一些其他安卓开发过程会用到的工具和软件。<br>下载JDK和AS要注意JDK的版本支持AS版本，这是笔者遇到的第一的坑，开始下载的JDK1.7+AS3.0导致后面AS里面打不开Android SDK Monitor，后来把JDK1.7换成JDK1.8就成功解决了这一问题，所以我建议大家下载JDK1.8和AS3.0。</p>
+<h2 id="一，下载JDK和AS"><a href="#一，下载JDK和AS" class="headerlink" title="一，下载JDK和AS"></a>一，下载JDK和AS</h2><p>首先mark一个网址<a href="http://www.androiddevtools.cn/" target="_blank" rel="noopener">http://www.androiddevtools.cn/</a><br>在这个网站里面可以下载各种安卓开发的工具，包括JDK，AS安装包和一些其他安卓开发过程会用到的工具和软件。<br>下载JDK和AS要注意JDK的版本支持AS版本，这是笔者遇到的第一的坑，开始下载的JDK1.7+AS3.0导致后面AS里面打不开Android SDK Monitor，后来把JDK1.7换成JDK1.8就成功解决了这一问题，所以我建议大家下载JDK1.8和AS3.0。</p>
 <h2 id="二，配置java环境"><a href="#二，配置java环境" class="headerlink" title="二，配置java环境"></a>二，配置java环境</h2><h3 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h3><p>JDK下载完成后点击安装，一直默认即可（自定义安装需要记住安装目录）</p>
 <h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>不知道如何进入环境变量设置界面可以百度一下，我们需要添加两条环境变量：<br><strong>2.2.1</strong> 新建一条JAVA_HOME环境变量,如下图，变量具体指自己确定<br><img src="http://cdn.hebaochina.top/AS1.png" alt="此处输入图片的描述"><br><strong>2.2.2</strong> 在PATH变量末尾追加一个变量值，千万注意是追加，不要作死去把之前的变量值全部删除了，追加的内容如下图，变量具体值自己确定<br><img src="http://cdn.hebaochina.top/AS2.png" alt="此处输入图片的描述"></p>
 <h3 id="测试java环境"><a href="#测试java环境" class="headerlink" title="测试java环境"></a>测试java环境</h3><p>打开cmd输入java -version和javac -version能正常输出java版本号即安装成功</p>
@@ -457,7 +457,7 @@
   <p><span>本文标题:</span><a href="/03-21-AndroidStudio.html">AndroidStudio</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 HeBaoChina 的个人博客">HeBaoChina</a></p>
   <p><span>发布时间:</span>2018年03月21日 - 15:03</p>
-  <p><span>最后更新:</span>2018年04月26日 - 15:04</p>
+  <p><span>最后更新:</span>2018年04月26日 - 18:04</p>
   <p><span>原始链接:</span><a href="/03-21-AndroidStudio.html" title="AndroidStudio">http://hebaochina.top/03-21-AndroidStudio.html</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://hebaochina.top/03-21-AndroidStudio.html"  aria-label="复制成功！"></i></span>
   </p>
@@ -491,6 +491,20 @@
 
     
 
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author: </strong>HeBaoChina</li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://hebaochina.top/03-21-AndroidStudio.html" title="AndroidStudio">http://hebaochina.top/03-21-AndroidStudio.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</li>
+</ul>
+
+      </div>
     
 
 
