@@ -394,8 +394,7 @@
 
   
     <div class="comments" id="comments">
-      <button onclick="showLivere()" id="livere-display-button" class="btn">显示评论</button>
-      <div id="lv-container" data-id="city" style="display:none" data-uid="MTAyMC8zNDk0MS8xMTQ3OA=="></div>
+      <div id="SOHUCS"></div>
     </div>
 
   
@@ -662,66 +661,24 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
-    <script type="text/javascript">
-        function showLivere(){
-        document.getElementById("livere-display-button").style.display = "none";
-        document.getElementById("lv-container").style.display = "block";
-      }
-    </script>
-    <style>
-        .btn {
-      display: inline-block;
-      padding: 0 20px;
-      font-size: $btn-default-font-size;
-      color: $btn-default-color;
-      background: $btn-default-bg;
-      border: $btn-default-border-width solid $btn-default-border-color;
-      text-decoration: none;
-      border-radius: $btn-default-radius;
-      transition-property: background-color;
-      the-transition();
-      line-height: 2;
 
-      &:hover {
-        border-color: $btn-default-hover-border-color;
-        color: $btn-default-hover-color;
-        background: $btn-default-hover-bg;
-      }
 
-      +.btn {
-        margin: 0 0 8px 8px;
-      }
 
-      .fa-fw {
-        width: (18em / 14);
-        text-align: left;
-      }
-    }
 
-    .btn-bar {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: $text-color;
-      border-radius: 1px;
-
-      &+.btn-bar { margin-top: 4px; }
-    }
-  </style>
   
-
-
-
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt2k8xHg';
+      var conf = 'prod_2e84ba5ff66c169a544098de70dfef3f';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
 
 
 
