@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[用邮箱登陆QQ]]></title>
+    <url>%2F05-06-%E9%82%AE%E7%AE%B1%E7%99%BB%E9%99%86qq.html</url>
+    <content type="text"><![CDATA[如果你厌倦了使用一串号码登陆QQ，或许想让自己的QQ显得更有B格，那么这篇文章绝对可以帮助到你！简单六步为QQ绑定一个高逼格邮箱账户名！绑定成功后，不仅可以用它登陆QQ，还可以让别人通过邮箱账号找到你。 一，打开我的QQ中心 二，点击账号，绑定邮箱辅助帐号 三，输入你需要绑定的邮箱账号 四，点开邮件里面的链接完成绑定 五，点击设置主显账号 六，这里就可以用邮箱账号+QQ密码登陆你的QQ了 对本篇文章有任何建议和其他帮助欢迎mail:879815165@qq.com]]></content>
+      <tags>
+        <tag>QQ</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[建站（3）-绑定域名]]></title>
     <url>%2F04-21-%E5%BB%BA%E7%AB%99-%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D.html</url>
     <content type="text"><![CDATA[我们的站点虽然已经搭建好了，但是用公网IP访问我们的站点实在太费劲了，所以我们需要购买一个便于记忆的域名并于我们的站点建立对接！其实这也非常容易，开始吧！ 一，购买域名去阿里云选择一个你喜欢的域名进行购买，相信花钱对大家来说不会是一件难事吧！所以这里就不再阐述了！ 二，配置nginx.conf1，用 vi /etc/nginx/nginx.conf 命令打开nginx.conf配置文件2，设置server_name为你购买的域名3，用 service nginx restart 命令重启nginx服务 三，域名服务器（DNS）解析1，进入阿里云控制台找到域名列表点击解析2，添加解析如下3,浏览器输入 www.hebaochina.top/wordpress（改为你的域名） 即可访问！ 对本篇文章有任何建议和其他帮助欢迎mail:879815165@qq.com]]></content>
