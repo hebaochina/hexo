@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Schedule</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Handlee">
+	</head>
+
+	<body>
+		<section>
+			<h1><span>My College Schedule</span></h1>
+			<table>
+				<tr>
+					<th>Day</th>
+					<th>Mon</th>
+					<th>Tue</th>
+					<th>Wed</th>
+					<th>Thu</th>
+					<th>Fri</th>
+				</tr>
+				<tr>
+					<td>8.30-10.10</td>
+					<td class="selected">定向井<br>(D305)</td>
+					<td class="selected">完井<br>(E203)</td>
+					<td class="selected">采油<br>(B212)</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>10.30-12.10</td>
+					<td></td>
+					<td></td>
+					<td class="selected">定向井<br>(D305)</td>
+					<td class="selected">完井<br>(E203)</td>
+					<td class="selected">采油<br>(A411)</td>
+				</tr>
+				<tr><td colspan="6" style="background: #000000;"></td></tr>
+				<tr>
+					<td>2.00-3.40</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="selected">就业<br>(C204)</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>4.00-5.40</td>
+					<td class="selected">采油<br>(B108)</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</section>
+
+	<style type="text/css">
+		html{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			font-family: 'Handlee', cursive;
+			font-size: 13pt;
+			background-color: #efefef;
+			padding: 10px;
+			margin: 0;
+		}
+		h1{
+			font-size: 15pt;
+			color: #20bcd5;
+			text-align: center;
+			padding: 18px 0 18px 0;
+			margin: 0 0 10px 0;
+		}
+		h1 span {
+			border: 4px dashed #20bcd5;
+			padding: 10px;
+		}
+		section{
+			background-color: #fff;
+			padding: 15px;
+			margin-bottom: 10px;
+			border-radius: 10px;
+		}
+		table{
+			width: 100%;
+			font-size: 11pt;
+		}
+		table, th, td {
+			border: 2px solid #cecece;
+			border-collapse: collapse;
+			text-align: center;
+			table-layout: fixed;
+		}
+		.selected{
+			background-color: #f36f48;
+			font-weight: bold;
+			table-layout: fixed;
+		}
+	</style>
+	</body>
+
+</html>
