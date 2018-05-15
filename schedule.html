@@ -9,7 +9,7 @@
 	<body>
 		<section>
 			<h1><span>My College Schedule</span></h1>
-			<table>
+			<table id="tb1">
 				<tr>
 					<th>Day</th>
 					<th>Mon</th>
@@ -99,6 +99,26 @@
 			table-layout: fixed;
 		}
 	</style>
+
+	<script type="text/javascript">
+		var mydate=new Date();
+		var myddy=mydate.getDay();	//获取星期几
+
+		var tab = document.getElementById("tb1");  
+		var rows = tab.rows;               //取得这个table下的所有行
+
+		for(var i=0;i<rows.length;i++)	//循环每一行
+		{
+			var j=myddy;
+			if (i==3) { continue; };	//跳过第三行
+			var cell = rows[i].cells[j];
+			cell.style.color="red";	//设置每一行的第j列style
+			cell.style.background="#EEEEEE";
+			cell.style.fontSize="18px";
+			cell.style.border="3px solid #ff99ff";
+		}
+	</script>
+
 	</body>
 
 </html>
