@@ -21,9 +21,9 @@
 				</tr>
 				<tr>
 					<td>8.30-10.10</td>
-					<td class="selected">定向井<br>(D305)</td>
-					<td class="selected">完井<br>(E203)</td>
-					<td class="selected">采油<br>(B212)</td>
+					<td></td>
+					<td></td>
+					<td></td>
 					<td></td>
 					<td></td>
 				</tr>
@@ -31,9 +31,9 @@
 					<td>10.30-12.10</td>
 					<td></td>
 					<td></td>
-					<td class="selected">定向井<br>(D305)</td>
-					<td class="selected">完井<br>(E203)</td>
-					<td class="selected">采油<br>(A411)</td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr><td colspan="6" style="background: #000000;"></td></tr>
 				<tr>
@@ -41,12 +41,12 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td class="selected">就业<br>(C204)</td>
+					<td></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>4.00-5.40</td>
-					<td class="selected">采油<br>(B108)</td>
+					<td ></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -55,6 +55,23 @@
 			</table>
 			<h2><span>测试阶段，每周六更新课程信息</span></h2>
 		</section>
+
+<!-- 		<select id="we" onchange="test()">  
+            <option>---周数选择---</option>  
+            <option>第一周</option>  
+            <option>第二周</option>  
+            <option>第三周</option>  
+            <option>第四周</option> 
+            <option>第五周</option>  
+            <option>第六周</option>  
+            <option>第七周</option>  
+            <option>第八周</option> 
+            <option>第九周</option>  
+            <option>第十周</option>  
+            <option>第十一周</option>  
+            <option>第十二周</option> 
+            <option>第十三周</option>  
+    	</select>   -->
 
 	<style type="text/css">
 		html{
@@ -114,9 +131,12 @@
 		}
 	</style>
 
+
 	<script type="text/javascript">
-		var mydate=new Date();
-		var myddy=mydate.getDay();	//获取星期几
+		//第一段js
+		var today=new Date();
+		// today.setFullYear(2018,5,1);
+		var myddy=today.getDay();	//获取星期几
 
 		var tab = document.getElementById("tb1");  
 		var rows = tab.rows;               //取得这个table下的所有行
@@ -124,6 +144,7 @@
 		for(var i=0;i<rows.length;i++)	//循环每一行
 		{
 			var j=myddy;
+			if (j==6) {break;};
 			if (i==3) { continue; };	//跳过第三行
 			var cell = rows[i].cells[j];
 			cell.style.color="red";	//设置每一行的第j列style
@@ -131,6 +152,68 @@
 			cell.style.fontSize="18px";
 			cell.style.border="3px solid #ff99ff";
 		}
+
+
+		//第二段js
+		var oneday = new Date();
+		oneday.setFullYear(2018,2,4);	//设置起始周
+		
+		//计算今天和起始周相差天数;
+		var x=today-oneday;
+		x = Math.abs(x);
+        x = Math.floor(x / (24 * 3600 * 1000));
+
+		//为每周设计课表
+		switch (true)
+		{	
+			case x>=7*3 && x<7*10+6:
+				rows[1].cells[1].innerHTML="定向井<br>(D305)";
+				rows[1].cells[1].classList.add("selected");
+				rows[2].cells[3].innerHTML="定向井<br>(D305)";
+				rows[2].cells[3].classList.add("selected");
+				break;
+			default:
+				break;
+		}
+		switch (true){
+			case x>=7*3 && x<7*7+6:
+			case x>=7*9 && x<7*11+6:
+				rows[1].cells[2].innerHTML="完井<br>(E203)";
+				rows[1].cells[2].classList.add("selected");
+				rows[2].cells[4].innerHTML="完井<br>(E203)";
+				rows[2].cells[4].classList.add("selected");
+				break;
+			default:
+				break;
+		}
+		switch (true){
+			case x>=7*3 && x<7*12+6:
+				rows[5].cells[1].innerHTML="采油<br>(B108)";
+				rows[5].cells[1].classList.add("selected");
+				rows[1].cells[3].innerHTML="采油<br>(B212)";
+				rows[1].cells[3].classList.add("selected");
+				break;
+			default:
+				break;
+		}
+		switch (true){
+			case x>=7*3 && x<7*4+6:
+			case x>=7*6 && x<7*11+6:
+				rows[2].cells[5].innerHTML="采油<br>(A411)";
+				rows[2].cells[5].classList.add("selected");
+				break;
+			default:
+				break;
+		}
+		switch (true){
+			case x>=7*9 && x<7*12+6:
+				rows[4].cells[4].innerHTML="就业<br>(C204)";
+				rows[4].cells[4].classList.add("selected");
+				break;
+			default:
+				break;
+		}
+			
 	</script>
 
 	</body>
