@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Handlee">
 	</head>
 
-	<body>
+	<body onload="test1(oday)">
 		<!-- 纯静态课程表网页--内测版--design by HeBaoChina -->
 		<section>
 			<h1><span>My College Schedule</span></h1>
@@ -53,25 +53,28 @@
 					<td></td>
 				</tr>
 			</table>
-			<h2><span>测试阶段，每周六更新课程信息</span></h2>
+			<h2><span>
+				<select id="we" onchange="test1()">  
+	            <option>---周数选择---</option>  
+	            <option>第十二周</option>
+	            <option>第十三周</option> 
+	<!--             <option>第二周</option>  
+	            <option>第三周</option>  
+	            <option>第四周</option> 
+	            <option>第五周</option>  
+	            <option>第六周</option>  
+	            <option>第七周</option>  
+	            <option>第八周</option> 
+	            <option>第九周</option>  
+	            <option>第十周</option>  
+	            <option>第十一周</option>  
+	            <option>第十二周</option> 
+	            <option>第十三周</option>   -->
+	    		</select> 
+    		</span></h2>
 		</section>
 
-<!-- 		<select id="we" onchange="test()">  
-            <option>---周数选择---</option>  
-            <option>第一周</option>  
-            <option>第二周</option>  
-            <option>第三周</option>  
-            <option>第四周</option> 
-            <option>第五周</option>  
-            <option>第六周</option>  
-            <option>第七周</option>  
-            <option>第八周</option> 
-            <option>第九周</option>  
-            <option>第十周</option>  
-            <option>第十一周</option>  
-            <option>第十二周</option> 
-            <option>第十三周</option>  
-    	</select>   -->
+		 
 
 	<style type="text/css">
 		html{
@@ -96,17 +99,13 @@
 			border: 4px dashed #20bcd5;
 			padding: 10px;
 		}
-		h2{
-			font-size: 13pt;
-			color: #000000;
-			text-align: center;
-			padding: 18px 0 18px 0;
-			margin: 10px 10px 10px 10px;
-		}
-		h2 span {
+		
+		select{
+			font-size: 10pt;
+			color: #20bcd5;
 			border-radius: 15px;
-			border: 4px solid #BA55D3;
-			padding: 10px;
+			border: 2px solid #BA55D3;
+			padding: 5px;
 		}
 		section{
 			background-color: #fff;
@@ -131,11 +130,60 @@
 		}
 	</style>
 
+<script type="text/javascript">
+	function test1() {
+		if(document.getElementById("we").options[1].selected) {
+			var oday=new Date();
+			oday.setFullYear(2018,4,20);
+			// document.write(oday);
+			clear();
+			test(oday);
+		}
+		else if(document.getElementById("we").options[0].selected){
+			oday=new Date();
+			clear();
+			test(oday);
+		}
+		else if(document.getElementById("we").options[2].selected){
+			oday=new Date();
+			oday.setFullYear(2018,4,27);
+			clear();
+			test(oday);
+		}
+	}
+</script>
+
+<script type="text/javascript">
+	function clear() {
+
+		var tab = document.getElementById("tb1");  
+		var rows = tab.rows;               //取得这个table下的所有行
+		for(var i=0;i<rows.length;i++)	//循环每一行
+		{
+			for(var j=0;j<6;j++){
+				if (j==6) {break;};
+				if (i==3) { continue; };	//跳过第三行
+				var cell = rows[i].cells[j];
+				cell.style.color="";	//设置每一行的第j列style
+				cell.style.background="";
+				cell.style.fontSize="";
+				cell.style.border="";
+				if (i!=0 && j!=0) {
+					cell.innerHTML="";
+					cell.classList.remove("selected");
+				}
+			}
+		}
+
+	}
+</script>
 
 	<script type="text/javascript">
 		//第一段js
-		var today=new Date();
-		// today.setFullYear(2018,5,1);
+		var oday=new Date();
+		// oday.setFullYear(2018,4,20);
+
+		function test(today) {
 		var myddy=today.getDay();	//获取星期几
 
 		var tab = document.getElementById("tb1");  
@@ -213,7 +261,7 @@
 			default:
 				break;
 		}
-			
+	}
 	</script>
 
 	</body>
