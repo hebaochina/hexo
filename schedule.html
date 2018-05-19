@@ -9,7 +9,15 @@
 	<body onload="test1(oday)">
 		<!-- 纯静态课程表网页--内测版--design by HeBaoChina -->
 		<section>
-			<h1><span>My College Schedule</span></h1>
+			<h1><span>海油15课表</span>
+			<h2 style="text-align: center;">
+				<select id="we" onchange="test1()">  
+	            <option>————当前周————</option>  
+	            <option>———第十二周———</option>
+	            <option>———第十三周———</option> 
+	    		</select> 
+    		</h2></h1>
+
 			<table id="tb1">
 				<tr>
 					<th>Day</th>
@@ -53,27 +61,24 @@
 					<td></td>
 				</tr>
 			</table>
-			<h2><span>
-				<select id="we" onchange="test1()">  
-	            <option>---周数选择---</option>  
-	            <option>第十二周</option>
-	            <option>第十三周</option> 
-	<!--             <option>第二周</option>  
-	            <option>第三周</option>  
-	            <option>第四周</option> 
-	            <option>第五周</option>  
-	            <option>第六周</option>  
-	            <option>第七周</option>  
-	            <option>第八周</option> 
-	            <option>第九周</option>  
-	            <option>第十周</option>  
-	            <option>第十一周</option>  
-	            <option>第十二周</option> 
-	            <option>第十三周</option>   -->
-	    		</select> 
-    		</span></h2>
 		</section>
-
+<hr/>
+		<section>
+			<h2>说明：</h2>
+			<span>1,每周的第一天为星期日，即每周的课表星期日自动更新</span>
+			<br/>
+			<span>2,默认突出显示当天的课程信息</span>
+			<br/>
+			<span>3,可以在上方点击当前周查看其他周的课表信息</span>
+			<br/>
+			<span>4,大家可以关注我的个人博客：<a style="color:red" href="https://hebaochina.top" target="blank">HeBaoChina</a></span>
+			<br/>
+			<span>5,防止大家忘记本页地址,我的博客主页页底有进入课表的链接</span>
+			<br/>
+			<span>6,课表设计(功能，界面等设计)一直在进行中,大家对课表设计有什么意见可以和我交流</span>
+			<br/>
+			<span>7,此课表专为海油15设计</span>
+		</section>
 		 
 
 	<style type="text/css">
@@ -101,8 +106,10 @@
 		}
 		
 		select{
-			font-size: 10pt;
-			color: #20bcd5;
+			font-size: 12pt;
+			font-family: 'Handlee', cursive;
+			font-weight: bold;
+			color: #000000;
 			border-radius: 15px;
 			border: 2px solid #BA55D3;
 			padding: 5px;
@@ -130,62 +137,35 @@
 		}
 	</style>
 
-<script type="text/javascript">
-	function test1() {
-		if(document.getElementById("we").options[1].selected) {
-			var oday=new Date();
-			oday.setFullYear(2018,4,20);
-			// document.write(oday);
-			clear();
-			test(oday);
-		}
-		else if(document.getElementById("we").options[0].selected){
-			oday=new Date();
-			clear();
-			test(oday);
-		}
-		else if(document.getElementById("we").options[2].selected){
-			oday=new Date();
-			oday.setFullYear(2018,4,27);
-			clear();
-			test(oday);
-		}
-	}
-</script>
-
-<script type="text/javascript">
-	function clear() {
-
-		var tab = document.getElementById("tb1");  
-		var rows = tab.rows;               //取得这个table下的所有行
-		for(var i=0;i<rows.length;i++)	//循环每一行
-		{
-			for(var j=0;j<6;j++){
-				if (j==6) {break;};
-				if (i==3) { continue; };	//跳过第三行
-				var cell = rows[i].cells[j];
-				cell.style.color="";	//设置每一行的第j列style
-				cell.style.background="";
-				cell.style.fontSize="";
-				cell.style.border="";
-				if (i!=0 && j!=0) {
-					cell.innerHTML="";
-					cell.classList.remove("selected");
-				}
+	<script type="text/javascript">
+		//页面加载和每次改变周数触发该方法用来改变oday的值
+		function test1() {
+			if(document.getElementById("we").options[1].selected) {
+				var oday=new Date();
+				oday.setFullYear(2018,4,20);
+				clear();	//清除所有课程信息
+				test(oday);	//获取oday所在周的课程信息
+			}
+			else if(document.getElementById("we").options[0].selected){
+				oday=new Date();
+				clear();
+				test(oday);
+			}
+			else if(document.getElementById("we").options[2].selected){
+				oday=new Date();
+				oday.setFullYear(2018,4,27);
+				clear();
+				test(oday);
 			}
 		}
-
-	}
-</script>
+	</script>
 
 	<script type="text/javascript">
-		//第一段js
+		//设置的周数
 		var oday=new Date();
-		// oday.setFullYear(2018,4,20);
 
 		function test(today) {
-		var myddy=today.getDay();	//获取星期几
-
+		var myddy=today.getDay();	//获取星期
 		var tab = document.getElementById("tb1");  
 		var rows = tab.rows;               //取得这个table下的所有行
 
@@ -193,25 +173,24 @@
 		{
 			var j=myddy;
 			if (j==6) {break;};
-			if (i==3) { continue; };	//跳过第三行
+			if (i==3) { continue; };
 			var cell = rows[i].cells[j];
-			cell.style.color="red";	//设置每一行的第j列style
+			//设置设置星期的style
+			cell.style.color="red";
 			cell.style.background="#EEEEEE";
 			cell.style.fontSize="18px";
 			cell.style.border="3px solid #ff99ff";
 		}
-
-
-		//第二段js
+		//设置起始周
 		var oneday = new Date();
-		oneday.setFullYear(2018,2,4);	//设置起始周
+		oneday.setFullYear(2018,2,4);
 		
-		//计算今天和起始周相差天数;
+		//计算设置周和起始周相差天数;
 		var x=today-oneday;
 		x = Math.abs(x);
         x = Math.floor(x / (24 * 3600 * 1000));
 
-		//为每周设计课表
+		//课程信息录入
 		switch (true)
 		{	
 			case x>=7*3 && x<7*10+6:
@@ -262,6 +241,33 @@
 				break;
 		}
 	}
+	</script>
+
+	<script type="text/javascript">
+		//清楚所有课程信息
+		function clear() {
+			var tab = document.getElementById("tb1");  
+			var rows = tab.rows;               //取得这个table下的所有行
+			for(var i=0;i<rows.length;i++)	//循环每一行
+			{
+				for(var j=0;j<6;j++){
+					if (j==6) {break;};	//跳过第六列
+					if (i==3) { continue; };	//跳过第三行
+					var cell = rows[i].cells[j];
+					//清除星期的style
+					cell.style.color="";
+					cell.style.background="";
+					cell.style.fontSize="";
+					cell.style.border="";
+					//清除每节课和style
+					if (i!=0 && j!=0) {
+						cell.innerHTML="";
+						cell.classList.remove("selected");
+					}
+				}
+			}
+
+		}
 	</script>
 
 	</body>
