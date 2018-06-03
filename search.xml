@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo博客教程（一）]]></title>
+    <url>%2F06-03-hexo.html</url>
+    <content type="text"><![CDATA[或许你只需要一个能发表文章的博客，对其他功能并没有太多的要求，那么hexo博客系统是一个不错的选择，并且hexo博客是静态的，你可以利用git将hexo博客免费托管在github或者coding上面，虽然访问速度不是很稳定，但是作为一个个人博客应该可以满足了。下面我就向大家分享一下我的hexo+coding（以coding为例）博客之旅。 一，注册coding账号并开启page服务1.1 访问 https://coding.net/ 注册一个coding账号；1.2 点击项目-&gt;新建项目-&gt;仿照下图填写信息完成项目的创建；1.3 进入创建好的项目开启Pages服务（coding现在启用了动态Pages服务，所以建议大家选择动态Pages服务），并选择部署来源（master）。 二，安装node.js2.1 访问 http://nodejs.cn/download/ 下载windows平台对应的nodejs版本；2.2 双击安装，一路默认即可。 三，安装并配置git3.1 访问 https://git-scm.com/downloads 下载windows平台对应git版本；3.2 双击安装，一路默认即可。 四，安装hexo4.1 用 npm -v 命令检查npm工具是否安装成功4.2 用 node -v 命令检查nodejs是否安装成功4.3 用 npm install hexo -g 命令安装hexo4.4 新建一个文件夹作为hexo的工作目录（例如我创建的是blog）4.5 进入blog文件夹执行 hexo init 命令初始化hexo4.6 用 hexo g 命令生成静态网页文件，然后用 hexo s 命令开启本地测试模式4.7 本地浏览器能正常访问 http://localhost:4000/ 本地hexo就安装成功了 五，添加ssh-rsa公钥5.1 用 cd ~/.ssh/ 命令进入.ssh文件夹，如果提示“No such file or directory” 用 mkdir ~/.ssh 命令创建一个.ssh文件夹5.2 用 ssh-keygen -t rsa -C 你的邮箱地址 命令生成公钥（过程中一直回车就是）5.3 用 cat ~/.ssh/id_rsa.pub 命令查看公钥5.4 将上面获得的公钥添加到你的coding项目中，记住勾选授予推送权限5.5 用 ssh -T git@git.coding.net 命令测试公钥，出现下图即配置成功 六，将本地hexo静态网页push到coding6.1 编辑根目录下的_config.yml文件6.2 用 npm install hexo-deployer-git --save 命令安装push工具6.3 用 git config --global user.email &quot;你的邮箱地址&quot; &amp;&amp; git config --global user.name &quot;你的用户名&quot; 命令告诉git你的邮箱地址和用户名6.4 用 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 命令push到coding6.5 现在访问coding为你提供的博客域名成功出现hexo页面即push成功，这个域名是很复杂的，建议自己去买一个域名！ 现在我们的hexo博客就创建完成了，如何使用和配置hexo博客请关注我之后的hexo博客教程，谢谢！]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[用邮箱登陆QQ]]></title>
     <url>%2F05-06-%E9%82%AE%E7%AE%B1%E7%99%BB%E9%99%86qq.html</url>
     <content type="text"><![CDATA[如果你厌倦了使用一串号码登陆QQ，或许想让自己的QQ显得更有B格，那么这篇文章绝对可以帮助到你！简单六步为QQ绑定一个高逼格邮箱账户名！绑定成功后，不仅可以用它登陆QQ，还可以让别人通过邮箱账号找到你。 一，打开我的QQ中心 二，点击账号，绑定邮箱辅助帐号 三，输入你需要绑定的邮箱账号 四，点开邮件里面的链接完成绑定 五，点击设置主显账号 六，这里就可以用邮箱账号+QQ密码登陆你的QQ了 对本篇文章有任何建议和其他帮助欢迎mail:879815165@qq.com]]></content>
