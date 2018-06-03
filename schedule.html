@@ -12,9 +12,10 @@
 			<h1><span>海油15课表</span>
 			<h2 style="text-align: center;">
 				<select id="we" onchange="test1()">  
-	            <option>————当前周————</option>  
+	            <option>———当前课表———</option>  
 	            <option>———第十二周———</option>
-	            <option>———第十三周———</option> 
+	            <option>———第十三周———</option>
+	            <option>———十三周后———</option>  
 	    		</select> 
     		</h2></h1>
 
@@ -65,15 +66,15 @@
 <hr/>
 		<section>
 			<h2>说明：</h2>
-			<span>1,每周的第一天为星期日，即每周的课表星期日自动更新</span>
+			<span>1,每周的第一天为<a style="background-color: #000000; color: #FFFFFF; ">星期日</a>，即每周的课表星期日自动更新</span>
 			<br/>
-			<span>2,默认突出显示当天的课程信息</span>
+			<span>2,默认<a style="background-color: #000000; color: #FFFFFF; ">突出显示</a>当天的课程信息</span>
 			<br/>
-			<span>3,可以在上方点击当前周查看其他周的课表信息</span>
+			<span>3,可以在上方点击当前课表查看其他周的课表信息</span>
 			<br/>
 			<span>4,大家可以关注我的个人博客：<a style="color:red" href="https://hebaochina.top" target="blank">HeBaoChina</a></span>
 			<br/>
-			<span>5,防止大家忘记本页地址,我的博客主页页底有进入课表的链接</span>
+			<span>5,防止大家忘记本页地址,我的<a style="background-color: #000000; color: #FFFFFF; ">博客主页页底</a>有进入课表的链接</span>
 			<br/>
 			<span>6,课表设计(功能，界面等设计)一直在进行中,大家对课表设计有什么意见可以和我交流</span>
 			<br/>
@@ -157,6 +158,13 @@
 				clear();
 				test(oday);
 			}
+			else if(document.getElementById("we").options[3].selected){
+				oday=new Date();
+				oday.setFullYear(2018,5,3);
+				clear();
+				test(oday);
+			}
+
 		}
 	</script>
 
@@ -237,6 +245,22 @@
 				rows[4].cells[4].innerHTML="就业<br>(C204)";
 				rows[4].cells[4].classList.add("selected");
 				break;
+			default:
+				break;
+		}
+		switch (true){
+			case x>=7*12+6:
+				for(var i=0;i<rows.length;i++)	//循环每一行
+				{
+					for(var j=0;j<6;j++){
+						if (j==6) {break;};	//跳过第六列
+						if (i==3) { continue; };	//跳过第三行
+						var cell = rows[i].cells[j];
+						if (i!=0 && j!=0) {
+							cell.innerHTML="采油课设<br>(K704)";
+						}
+					}
+				}
 			default:
 				break;
 		}
